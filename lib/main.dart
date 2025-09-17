@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_teatro/config/routes.dart';
-import 'package:flutter_app_teatro/pages/home/home_page.dart';
+import 'package:flutter_app_teatro/pages/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Programa-Akáshico',
+      title: 'Teatro App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       onGenerateRoute: Routes.generateRoute,
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

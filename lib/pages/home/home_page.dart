@@ -20,23 +20,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: Stack(children: [
-          Align(
-            alignment: Alignment.bottomRight,
-            child: TextButton(
-              onPressed: () {},
-              child: const FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  'Adm',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontFamily: 'RobotoMono',
-                    fontSize: 8,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
