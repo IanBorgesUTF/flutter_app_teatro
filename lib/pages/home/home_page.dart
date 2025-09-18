@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_teatro/config/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,7 +38,9 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height * 0.1,
               ),
               OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.rulesPage);
+                },
                 style: OutlinedButton.styleFrom(
                   fixedSize: const Size(200, 80),
                   side: const BorderSide(color: Colors.white, width: 4),
