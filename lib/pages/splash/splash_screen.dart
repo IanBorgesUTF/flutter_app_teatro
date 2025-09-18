@@ -58,6 +58,7 @@ class _SplashScreenState extends State<SplashScreen>
             const SizedBox(height: 10),
             Text(
               "${(progress * 100).round()}%",
+              softWrap: true,
               style: const TextStyle(color: Colors.white),
             ),
           ],
