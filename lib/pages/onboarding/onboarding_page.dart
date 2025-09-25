@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_teatro/pages/home/home_page.dart';
 import 'package:flutter_app_teatro/rules/rules_page.dart';
+import 'package:flutter_app_teatro/terms_conditions/terms_conditions_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -14,7 +15,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
   int _currentPage = 0;
 
   void _nextPage() {
-    if (_currentPage < 1) {
+    const totalPages = 3;
+    if (_currentPage < totalPages - 1) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
@@ -24,19 +26,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _currentPage = index;
-          });
-        },
-        children: [
-          HomePage(onNext: _nextPage),
-          const RulesPage(),
-        ],
-      ),
+    return PageView(
+      controller: _pageController,
+      physics: _currentPage == 1 || _currentPage == 2
+          ? const NeverScrollableScrollPhysics()
+          : const BouncingScrollPhysics(),
+      onPageChanged: (index) {
+        setState(() {
+          _currentPage = index;
+        });
+      },
+      children: [
+        HomePage(onNext: _nextPage),
+        TermsConditionsPage(onNext: _nextPage),
+        const RulesPage(),
+      ],
     );
   }
 }

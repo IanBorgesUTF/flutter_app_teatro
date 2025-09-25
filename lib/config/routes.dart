@@ -3,10 +3,12 @@ import 'package:flutter_app_teatro/pages/home/home_page.dart';
 import 'package:flutter_app_teatro/pages/onboarding/onboarding_page.dart';
 import 'package:flutter_app_teatro/pages/splash/splash_screen.dart';
 import 'package:flutter_app_teatro/rules/rules_page.dart';
+import 'package:flutter_app_teatro/terms_conditions/terms_conditions_page.dart';
 
 class Routes {
   static const String splashScreen = '/';
   static const String homePage = '/home_page';
+  static const String termsConditionsPage = '/terms_conditions_page';
   static const String rulesPage = '/rules_page';
   static const String onboardingPage = '/onboarding_page';
 
@@ -19,6 +21,10 @@ class Routes {
       case homePage:
         return MaterialPageRoute(
           builder: (_) => const HomePage(),
+        );
+      case termsConditionsPage:
+        return MaterialPageRoute(
+          builder: (_) => const TermsConditionsPage(),
         );
       case rulesPage:
         return MaterialPageRoute(
